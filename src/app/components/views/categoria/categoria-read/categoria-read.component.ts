@@ -11,7 +11,7 @@ export class CategoriaReadComponent implements OnInit {
 
   categorias: Categoria[] = [] // cria a lista de categorias..
 
-  displayedColumns: string[] = ['id', 'nome', 'descricao', 'acoes'];
+  displayedColumns: string[] = ['id', 'nome', 'descricao', 'livros', 'acoes'];
 
   constructor(private service: CategoriaService) { } // no construtor cria o serviço de CategoriaService
 
@@ -25,6 +25,4 @@ export class CategoriaReadComponent implements OnInit {
       this.categorias = resposta;
     })
   }
-  
-
 }
