@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Categoria } from '../categoria-model';
 import { CategoriaService } from '../categoria.service';
 
@@ -13,7 +14,7 @@ export class CategoriaReadComponent implements OnInit {
 
   displayedColumns: string[] = ['id', 'nome', 'descricao', 'livros', 'acoes'];
 
-  constructor(private service: CategoriaService) { } // no construtor cria o serviço de CategoriaService
+  constructor(private service: CategoriaService,private router: Router) { } // no construtor cria o serviço de CategoriaService
 
   ngOnInit(): void {
     this.findAll(); // sempre qua abre a pagina vai chamar a lista de categoria..
@@ -24,5 +25,9 @@ export class CategoriaReadComponent implements OnInit {
       console.log(resposta);
       this.categorias = resposta;
     })
+  }
+
+  navegarParaCategoriaCreate(){
+    this.router.navigate(["categorias/create"])
   }
 }

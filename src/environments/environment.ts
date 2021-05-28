@@ -4,7 +4,9 @@
 
 export const environment = {
   production: false,
-  baseUrl: 'https://my-new-bookstore-api.herokuapp.com/'
+  baseUrl: '/api'
+  //baseUrl: 'https://my-new-bookstore-api.herokuapp.com/'
+  //baseUrl: 'http://localhost:4200'
 };
 
 /*
