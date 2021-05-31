@@ -19,9 +19,19 @@ export class CategoriaService {
   return this.http.get<Categoria[]>(url) // apenas retorna o url da lista de categoria
 }
 
+findById(id: String):Observable<Categoria>{
+  const url =`${this.baseUrl}/categorias/${id}`
+  return this.http.get<Categoria>(url)
+}
+
 create(categoria:Categoria): Observable<Categoria>{ // metodo criar categoria passando argumento de tipo categoria
   const url = `${this.baseUrl}/categorias` //
   return this.http.post<Categoria>(url,categoria); // apenas retorna o tipo categoria da lista de categoria
+}
+
+delete(id:String):Observable<void>{ //metodo detet que retorna void..
+  const url = `${this.baseUrl}/categorias/${id}` // pega o Url passando id
+  return this.http.delete<void>(url) //retorna o URL com id que vai ser deletado. 
 }
 
 mensagem(msg: String): void{
