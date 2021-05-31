@@ -34,6 +34,11 @@ delete(id:String):Observable<void>{ //metodo detet que retorna void..
   return this.http.delete<void>(url) //retorna o URL com id que vai ser deletado. 
 }
 
+update(categoria:Categoria):Observable<void>{
+  const url = `${this.baseUrl}/categorias/${categoria.id}`
+  return this.http.put<void>(url,categoria)
+}
+
 mensagem(msg: String): void{
   this.snackbar.open(`${msg}`, 'ok', {
     horizontalPosition: 'end',
