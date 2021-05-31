@@ -27,7 +27,6 @@ export class CategoriaUpdateComponent implements OnInit {
     this.service.findById(this.categoria.id!).subscribe((resposta)=>{
       this.categoria.nome = resposta.nome;
       this.categoria.descricao = resposta.descricao;
-      console.log(resposta)
     });
   }
 
