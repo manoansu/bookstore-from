@@ -33,6 +33,11 @@ export class LivroService {
     const url = `${this.baseUrl}/livros?categoria=${id_cat}`
     return this.http.post<Livro>(url,livro)
   }
+  
+  delete(id:String):Observable<void>{
+    const url = `${this.baseUrl}/livros/${id}`
+    return this.http.delete<void>(url)
+  }
 
   mensagem(msg:String):void{
     this.snackbar.open(`${msg}`, 'ok',{
